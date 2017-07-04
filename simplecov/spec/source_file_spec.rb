@@ -25,7 +25,7 @@ if SimpleCov.usable?
       end
 
       it "has 16 source lines" do
-        expect(subject.lines.count).to eq(17)
+        expect(subject.lines.count).to eq(16)
       end
 
       it "has all source lines of type SimpleCov::SourceFile::Line" do
