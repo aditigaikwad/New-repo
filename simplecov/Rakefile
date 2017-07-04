@@ -42,9 +42,44 @@ namespace :rspec_report do
     `open reports/rspec_results.html` # This only works if running OS X.
   end
 end
+require "rubocop/rake_task"
+#RuboCop::RakeTask.new(:rubocop_debug) do |t|
+ # t.options = ['-d']
+#end
+#require "rubocop"
+
+#desc 'Run Rubocop'
+ # task :Rubocop do
+#require "rubocop"    
+ #   sh "rubocop"
+  #end
+
+desc 'Execute rubocop -DR'
+    RuboCop::RakeTask.new(:rubocop) do |tsk|
+      tsk.options = ['-DR'] # Rails, display cop name
+      tsk.fail_on_error = false
+    end
+
+#task :rubocop do
+  # Your code goes here
+#sh 'rubocop'
+
+#end
+
+
+#task :default => [:spec]
+
+
+
 #begin
- # require "rubocop/rake_task"
-  #RuboCop::RakeTask.new
+
+ #require "rubocop"
+#ask test: rubocop
+
+#ask :rubocop do
+ #sh 'rubocop'
+#nd
+ # RuboCop::RakeTask.new
 #rescue LoadError
  # task :rubocop do
   #  $stderr.puts "Rubocop is disabled"
@@ -53,7 +88,8 @@ end
 
 # Cucumber integration test suite is for impls that work with simplecov only - a.k.a. 1.9+
 #if RUBY_VERSION.start_with? "1.8"
-  task :default => [:spec]
+
+
 #else
  # require "cucumber/rake/task"
   #Cucumber::Rake::Task.new
