@@ -6,9 +6,7 @@ class SomeClass
     @label = label
   end
 
-  def reverse
-    label.reverse
-  end
+  delegate :reverse, :to => :label
 
   def compare_with(item)
     if item == label

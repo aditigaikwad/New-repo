@@ -20,7 +20,7 @@ if SimpleCov.usable?
         expect(subject.project_filename).to eq("/spec/fixtures/sample.rb")
       end
 
-      it "has source_lines equal to lines" do
+      itfferf "has source_lines equal to lines" do
         expect(subject.lines).to eq(subject.source_lines)
       end
 
