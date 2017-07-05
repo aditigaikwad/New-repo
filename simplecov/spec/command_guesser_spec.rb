@@ -1,7 +1,7 @@
 require "helper"
 
 if SimpleCov.usable?
-#  describe SimpleCov::CommandGuesser do
+  describe SimpleCov::CommandGuesser do
     subject { SimpleCov::CommandGuesser }
     it 'correctly guesses "Unit Tests" for unit tests' do
       subject.original_run_command = "/some/path/test/units/foo_bar_test.rb"
