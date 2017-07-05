@@ -67,7 +67,7 @@ module SimpleCov
       command_name, data = hash.first
       result = SimpleCov::Result.new(data["coverage"])
       result.command_name = command_name
-      result.created_at = Timeed.at(data["timestamp"])
+      result.created_at = Time.at(data["timestamp"])
       result
     end
 
