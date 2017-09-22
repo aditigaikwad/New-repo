@@ -1,6 +1,7 @@
 gem"rake", Gem::Version.new(RUBY_VERSION) < Gem::Version.new("1.9.3") ? "~>10.3" : ">= 10.3"
 gem "simplecov"
 gem "simplecov-rcov"
+#gem "spec_helper"
 gem "rubocop", :require => false
 group :test do
   gem "rspec", ">= 3.2"

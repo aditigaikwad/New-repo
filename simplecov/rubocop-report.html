@@ -1,0 +1,40 @@
+Inspecting 79 files
+.CC............................................................................
+
+Offenses:
+
+Gemfile:4:1: C: Missing space after #.
+#gem "spec_helper"
+^^^^^^^^^^^^^^^^^^
+Rakefile:22:1: C: Use 2 (not 0) spaces for indentation.
+spec.pattern = FileList["spec/*_spec"]
+
+Rakefile:23:3: C: Inconsistent indentation detected.
+  spec.rspec_opts = "--format html --out reports/rspec_results.html"
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:25:3: C: Inconsistent indentation detected.
+  require "simplecov"
+  ^^^^^^^^^^^^^^^^^^^
+Rakefile:27:3: C: Inconsistent indentation detected.
+  SimpleCov.coverage_dir("tmp/coverage")
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:29:3: C: Inconsistent indentation detected.
+  SimpleCov.start
+  ^^^^^^^^^^^^^^^
+Rakefile:50:27: C: Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.
+  tsk.patterns = FileList['/root/RORCIaditi/simplecov/*']
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:51:2: C: Incorrect indentation detected (column 1 instead of 2).
+ # tsk.formatters = ["html"]
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:55:1: C: Incorrect indentation detected (column 0 instead of 2).
+#   tsk.formatters = ["html"]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:62:1: C: Incorrect indentation detected (column 0 instead of 1).
+# end
+^^^^^
+Rakefile:64:2: C: Inconsistent indentation detected.
+ task :default => [:spec]
+ ^^^^^^^^^^^^^^^^^^^^^^^^
+
+79 files inspected, 11 offenses detected
