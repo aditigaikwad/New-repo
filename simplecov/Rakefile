@@ -4,7 +4,7 @@ require "rubygems"
 require "bundler/setup"
 
 
-#Bundler::GemHelper.install_tasks
+Bundler::GemHelper.install_tasks
 
 # See https://github.com/colszowka/simplecov/issues/171
 # desc "Set permissions on all files so they are compatible with both user-local and system-wide installs"
