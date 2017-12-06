@@ -2,7 +2,7 @@
 
 require "rubygems"
 require "bundler/setup"
-# require "spec_helper"
+
 
 Bundler::GemHelper.install_tasks
 
@@ -15,8 +15,7 @@ Bundler::GemHelper.install_tasks
 Rake::Task[:build]
 
 require "rspec/core/rake_task"
-# require "simplecov"
-# require "simplecov-rcov"
+
 RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList["spec/*_spec.rb"]
   spec.rspec_opts = "--format html --out reports/rspec_results.html"
@@ -27,58 +26,32 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
 
   SimpleCov.start
 
-  # spec.simplecov.coverage_dir("tmp/coverage")
-  # spec.simplecov.start
+
 end
 
+# namespace :rspec_report do
+  # desc "Run all specs and generate RSpec report in HTML"
+  # task :html => :spec
 
-require "rubocop/rake_task"
+  # desc "Run all specs, generate RSpec report and open it in the browser"
+  # task :browser do
+    # Rake::Task[:spec].invoke
+    # `open reports/rspec_results.html` # This only works if running OS X.
+  # end
+# end
+# require "rubocop/rake_task"
 
-desc "Execute rubocop -DR"
-RuboCop::RakeTask.new(:rubocop) do |tsk|
-  tsk.options = ["-DR"] # Rails, display cop name
-  tsk.fail_on_error = false
-  tsk.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
- # tsk.formatters = ["html"]
-  tsk.options = ["--out", "rubocop-report.html"]
-#  tsk.RUBOCOP_OPTS = "--format html -o rubocop.html"
-#   tsk.formatters = "--format html -o rubocop.html"
-#   tsk.formatters = ["html"]
-end
+# desc "Execute rubocop -DR"
+# RuboCop::RakeTask.new(:rubocop) do |tsk|
+  # tsk.options = ["-DR"] # Rails, display cop name
+  # tsk.fail_on_error = false
+  # tsk.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
 
-# task :rubocop do
-# Your code goes here
-# sh 'rubocop'
+  # tsk.options = ["--out", "rubocop-report.html"]
 
 # end
 
- task :default => [:spec]
 
-# begin
+ # task :default => [:spec]
 
-# require "rubocop"
-# ask test: rubocop
 
-# ask :rubocop do
-# sh 'rubocop'
-# nd
-# RuboCop::RakeTask.new
-# rescue LoadError
-# task :rubocop do
-#  $stderr.puts "Rubocop is disabled"
-# end
-# end
-
-# Cucumber integration test suite is for impls that work with simplecov only - a.k.a. 1.9+
-# if RUBY_VERSION.start_with? "1.8"
-
-# else
-# require "cucumber/rake/task"
-# Cucumber::Rake::Task.new
-
-# if RUBY_VERSION.start_with? "1.9"
-#  task :default => [:spec, :cucumber]
-# else
-# task :default => [:rubocop, :spec, :cucumber]
-# end
-# end
