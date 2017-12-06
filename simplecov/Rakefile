@@ -25,14 +25,11 @@ require "rspec/core/rake_task"
 
   SimpleCov.coverage_dir("tmp/coverage")
 
-  # SimpleCov.start
+ 
 
 
 end
 
  
-
-
- # task :default => [:spec]
 
 
