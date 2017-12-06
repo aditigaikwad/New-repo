@@ -14,6 +14,18 @@ Bundler::GemHelper.install_tasks
 # E Enforce proper permissions on each build
 Rake::Task[:build]
 
+require "rubocop/rake_task"
+
+ desc "Execute rubocop -DR"
+ RuboCop::RakeTask.new(:rubocop) do |rubocop|
+  rubocop.options = ["-DR"] # Rails, display cop name
+   rubocop.fail_on_error = false
+   rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
+
+  rubocop.options = ["--out", "rubocop-report.html"]
+
+ end
+
 require "rspec/core/rake_task"
 
  RSpec::Core::RakeTask.new(:spec) do |spec|
@@ -30,20 +42,9 @@ require "rspec/core/rake_task"
 
 end
 
- require "rubocop/rake_task"
-
- desc "Execute rubocop -DR"
- RuboCop::RakeTask.new(:rubocop) do |rubocop|
-  rubocop.options = ["-DR"] # Rails, display cop name
-   rubocop.fail_on_error = false
-   rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
-
-  rubocop.options = ["--out", "rubocop-report.html"]
-
- end
+ 
 
 
  # task :default => [:spec]
-
 
 
