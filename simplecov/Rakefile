@@ -12,7 +12,7 @@ Bundler::GemHelper.install_tasks
 #  system 'bash -c "find . -type f -exec chmod 644 {} \; && find . -type d -exec chmod 755 {} \;"'
 # end
 # E Enforce proper permissions on each build
-Rake::Task[:build]
+#Rake::Task[:build]
 
 require "rubocop/rake_task"
 
