@@ -1,6 +1,5 @@
-#!/usr/bin/env rake
 
-#require "rubygems"
+require "rubygems"
 #require "bundler/setup"
 
 require "rubocop/rake_task"
