@@ -40,19 +40,18 @@ end
     # `open reports/rspec_results.html` # This only works if running OS X.
   # end
 # end
-# require "rubocop/rake_task"
+ require "rubocop/rake_task"
 
 # desc "Execute rubocop -DR"
-# RuboCop::RakeTask.new(:rubocop) do |tsk|
-  # tsk.options = ["-DR"] # Rails, display cop name
-  # tsk.fail_on_error = false
-  # tsk.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
+RuboCop::RakeTask.new(:rubocop) do |rubocop|
+  rubocop.options = ["-DR"] # Rails, display cop name
+  rubocop.fail_on_error = false
+  rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
 
-  # tsk.options = ["--out", "rubocop-report.html"]
+  rubocop.options = ["--out", "rubocop-report.html"]
 
-# end
+ end
 
 
  # task :default => [:spec]
-
 
