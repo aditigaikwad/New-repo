@@ -4,7 +4,7 @@ require "rubygems"
 require "bundler/setup"
 
 
-Bundler::GemHelper.install_tasks
+#Bundler::GemHelper.install_tasks
 
 # See https://github.com/colszowka/simplecov/issues/171
 # desc "Set permissions on all files so they are compatible with both user-local and system-wide installs"
@@ -14,44 +14,5 @@ Bundler::GemHelper.install_tasks
 # E Enforce proper permissions on each build
 Rake::Task[:build]
 
-require "rspec/core/rake_task"
-
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList["spec/*_spec.rb"]
-  spec.rspec_opts = "--format html --out reports/rspec_results.html"
-
-  require "simplecov"
-
-  SimpleCov.coverage_dir("tmp/coverage")
-
-  SimpleCov.start
-
-
-end
-
-# namespace :rspec_report do
-  # desc "Run all specs and generate RSpec report in HTML"
-  # task :html => :spec
-
-  # desc "Run all specs, generate RSpec report and open it in the browser"
-  # task :browser do
-    # Rake::Task[:spec].invoke
-    # `open reports/rspec_results.html` # This only works if running OS X.
-  # end
-# end
-# require "rubocop/rake_task"
-
-# desc "Execute rubocop -DR"
-# RuboCop::RakeTask.new(:rubocop) do |tsk|
-  # tsk.options = ["-DR"] # Rails, display cop name
-  # tsk.fail_on_error = false
-  # tsk.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
-
-  # tsk.options = ["--out", "rubocop-report.html"]
-
-# end
-
-
- # task :default => [:spec]
 
 
