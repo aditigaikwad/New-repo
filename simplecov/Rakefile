@@ -3,9 +3,7 @@ require "rubygems"
 require "bundler/setup"
 
 require "rubocop/rake_task"
-#desc "Execute rubocop -DR"
- RuboCop::RakeTask.new(:rubocop) do |rubocop|
-  #rubocop.options = ["-DR"] # Rails, display cop name
+RuboCop::RakeTask.new(:rubocop) do |rubocop|
    rubocop.fail_on_error = false
    rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
 
@@ -22,7 +20,3 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
 
   SimpleCov.coverage_dir("tmp/coverage")
 end
-
- 
-
-
