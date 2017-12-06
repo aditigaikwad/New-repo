@@ -3,20 +3,17 @@ require "rubygems"
 require "bundler/setup"
 
 require "rubocop/rake_task"
-
- desc "Execute rubocop -DR"
+#desc "Execute rubocop -DR"
  RuboCop::RakeTask.new(:rubocop) do |rubocop|
-  rubocop.options = ["-DR"] # Rails, display cop name
+  #rubocop.options = ["-DR"] # Rails, display cop name
    rubocop.fail_on_error = false
    rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
 
   rubocop.options = ["--out", "rubocop-report.html"]
-
- end
+end
 
 require "rspec/core/rake_task"
-
- RSpec::Core::RakeTask.new(:spec) do |spec|
+RSpec::Core::RakeTask.new(:spec) do |spec|
    spec.pattern = FileList["spec/*_spec.rb"]
    spec.rspec_opts = "--format html --out reports/rspec_results.html"
 
@@ -24,10 +21,6 @@ require "rspec/core/rake_task"
   SimpleCov.start
 
   SimpleCov.coverage_dir("tmp/coverage")
-
- 
-
-
 end
 
  
