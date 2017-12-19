@@ -22,6 +22,14 @@ SimpleCov.start
 
 end
 
+RuboCop::RakeTask.new(:rubocop) do |rubocop|
+   rubocop.fail_on_error = false
+   rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
+
+  #rubocop.options = ["--out", "rubocop-report.html"]
+  rubocop.options = ["--format html --out rubocop-report.html"]
+end
+
 #if RUBY_VERSION.start_with? "1.8"
  
 
