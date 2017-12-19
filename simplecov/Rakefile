@@ -24,4 +24,3 @@ RuboCop::RakeTask.new(:rubocop) do |rubocop|
   #rubocop.options = ["--out", "rubocop-report.html"]
   rubocop.options = ["--format html --out rubocop-report.html"]
 end
-
