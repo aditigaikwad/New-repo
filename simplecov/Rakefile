@@ -3,6 +3,8 @@ require "rubygems"
 require "bundler/setup"
 
 require "rspec/core/rake_task"
+Bundler::GemHelper.install_tasks
+require "rubocop/rake_task"
 RSpec::Core::RakeTask.new(:spec) do |spec|
    spec.pattern = FileList["spec/*_spec.rb"]
    spec.rspec_opts = "--format html --out reports/rspec_results.html"
@@ -13,7 +15,7 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   SimpleCov.coverage_dir("tmp/coverage")
 end
 
-require "rubocop/rake_task"
+
 Rake::Task[:build]
 RuboCop::RakeTask.new(:rubocop) do |rubocop|
    rubocop.fail_on_error = false
