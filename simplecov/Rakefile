@@ -16,7 +16,7 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
 end
 
 
-Rake::Task[:build]
+
 RuboCop::RakeTask.new(:rubocop) do |rubocop|
    rubocop.fail_on_error = false
    rubocop.patterns = FileList['/root/RORCIaditi/simplecov/spec/*.rb']
