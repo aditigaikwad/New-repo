@@ -43,6 +43,6 @@ end
 
 
 #if RUBY_VERSION.start_with? "1.8"
-  task :default => [:spec]
+ 
 
  
