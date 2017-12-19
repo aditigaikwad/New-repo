@@ -1,7 +1,6 @@
 # Borrowed and heavily adjusted from:
 # https://github.com/metricfu/metric_fu/blob/master/spec/capture_warnings.rb
 require "fileutils"
-
 class FailOnWarnings
   def initialize
     @stderr_stream = StringIO.new
