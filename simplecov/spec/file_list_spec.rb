@@ -1,5 +1,4 @@
 require "helper"
-
 if SimpleCov.usable?
   describe SimpleCov::Result do
     subject do
